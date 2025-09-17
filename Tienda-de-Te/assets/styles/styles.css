@@ -1,0 +1,372 @@
+/*///////////////// ESTILOS GENERALES /////////////////*/
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/*__________________ NAVBAR ____________________________*/
+.navbar {
+    background-color: #000;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.nav-links li a:hover {
+    background-color: #9eae6a;
+    color: #000;
+}
+
+.carousel {
+    background-color: #f9f9f9;
+    padding: 2rem 0;
+}
+
+/*__________________ CARRUSEL ____________________________*/
+.carousel {
+    height: calc(100vh - 160px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Contenedor general */
+.carousel-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.carousel-slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Slide visible */
+.carousel-slide.active {
+    display: flex;
+}
+
+/* Imagen toma toda la slide */
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Texto sobre la imagen */
+.carousel-text {
+    position: relative;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    max-width: 600px;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+/* Botones de navegación */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 3;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/*__________________ FOOTER ____________________________*/
+/*.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    z-index: 1;
+}*/
+
+.main-footer {
+    background-color: #333; 
+    color: #f5f2ed; 
+    padding: 40px 20px 20px; 
+    font-family: 'Open Sans', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 30px; 
+}
+
+.footer-column {
+    flex: 1; 
+    min-width: 200px; 
+    margin-bottom: 20px; 
+}
+
+.footer-column h2 {
+    font-size: 1.8rem;
+    color: #f5f2ed; 
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-column h3 {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-column ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px; 
+}
+
+.footer-column ul li a {
+    color: #ccc; 
+    text-decoration: none; 
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #fff; 
+}
+
+/* Estilos para el formulario de suscripción */
+.subscribe-form form .form-group {
+    margin-bottom: 15px;
+}
+
+.subscribe-form input[type="text"],
+.subscribe-form input[type="email"] {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #555; 
+    border-radius: 4px;
+    background-color: #444; 
+    color: #fff; 
+    font-size: 0.95rem;
+    box-sizing: border-box; 
+}
+
+.subscribe-form input::placeholder {
+    color: #aaa; 
+}
+
+.btn-subscribe {
+    background-color: #836953; 
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.btn-subscribe:hover {
+    background-color: #6a5342;
+}
+
+/* Estilos para íconos de redes sociales */
+.social-icons {
+    margin-top: 30px;
+    text-align: center; 
+}
+
+.social-icons h4 {
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 10px; 
+}
+
+.social-icon img {
+    width: 30px; 
+    height: 30px;
+    vertical-align: middle; 
+}
+
+/* Sección copyright */
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #444; 
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+
+/*__________________ RESPONSIVE ____________________________*/
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 1080px) {}
+
+@media (max-width: 768px) {
+    .nav-links {
+        font-size: 0.9rem;
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 375px) {}
+
+/* Responsividad en footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+    }
+
+    .footer-column {
+        min-width: unset; 
+        width: 100%; 
+        margin-bottom: 30px;
+    }
+
+    .footer-column ul {
+        margin-bottom: 20px;
+    }
+
+    .subscribe-form {
+        width: 80%; 
+    }
+}
+/* ---------------- SECCIÓN CONTACTO ---------------- */
+.contact-section {
+    padding: 2rem;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.contact-section h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #9eae6a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #7c9053;
+}
