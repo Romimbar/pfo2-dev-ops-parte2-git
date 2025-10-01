@@ -5,6 +5,5 @@ services:
     build: .
     container_name: tienda-te-web
     ports:
-      - "8080:80"   # puerto 8080 de tu PC → puerto 80 del contenedor
+      - "8080:80"
     restart: always
-
