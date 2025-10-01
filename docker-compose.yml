@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: practica2_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: practica_db
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppass
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  web:
+    build: .
+    container_name: practica2_web
+    restart: always
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: practica_db
+      DB_USER: appuser
+      DB_PASS: apppass
+    ports:
+      - "8080:80"
+    volumes:
+      - ./www:/var/www/html
+
+volumes:
+  db_data:
