@@ -1,11 +1,8 @@
-# Imagen base: PHP con Apache
-FROM php:8.1-apache
+# Imagen base de Nginx
+FROM nginx:alpine
 
-# Instalar extensión mysqli para conectar PHP con MySQL
-RUN docker-php-ext-install mysqli
+# Copiamos los archivos del sitio a la carpeta pública de Nginx
+COPY sitio-web/ /usr/share/nginx/html
 
-# Copiar el código del proyecto (la carpeta www/) al servidor Apache
-COPY ./www/ /var/www/html/
-
-# Exponer el puerto 80 (Apache)
+# Exponemos el puerto 80 (HTTP)
 EXPOSE 80
